@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My React Training</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script type="text/javascript">
+        const mainHeading = React.createElement('H1', null, 'This is H1 Heading');
+        const articleHeadgin = React.createElement('H2', null, 'This is H2');
+        const para = React.createElement('p', {className: 'myPara'}, 'This is my first para of react training');
+        const article = React.createElement('article', null, articleHeadgin, para);
+        const main = React.createElement('main', {id: 'main'}, mainHeading, article);
+
+        ReactDOM.render(main, document.getElementById('root'));
+    </script>
+</body>
+</html>
