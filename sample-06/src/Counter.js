@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 
-const CounterView = ({ counterValue, onIncrement }) => (
-    <>
-        <p>{counterValue}</p>
-        <button type="button" onClick={onIncrement}>Increment</button>
-    </>
-);
+import InteractiveView from "./InteractiveView";
 
 const Counter = () => {
     const [counter, setCounter] = useState(0);
@@ -14,9 +9,10 @@ const Counter = () => {
     }
 
     return (
-        <CounterView
-            counterValue={counter}
-            onIncrement={onClickHandler}
+        <InteractiveView
+            value={counter}
+            onAction={onClickHandler}
+            actionText="Increment"
         />
     );
 }
