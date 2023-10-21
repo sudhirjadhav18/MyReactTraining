@@ -1,5 +1,12 @@
 import React, { useState } from "react";
 
+const CounterView = ({ counterValue, onIncrement }) => (
+    <>
+        <p>{counterValue}</p>
+        <button type="button" onClick={onIncrement}>Increment</button>
+    </>
+);
+
 const Counter = () => {
     const [counter, setCounter] = useState(0);
     const onClickHandler = () => {
@@ -7,10 +14,10 @@ const Counter = () => {
     }
 
     return (
-        <>
-            <p>{counter}</p>
-            <button type="button" onClick={onClickHandler}>Increment</button>
-        </>
+        <CounterView
+            counterValue={counter}
+            onIncrement={onClickHandler}
+        />
     );
 }
 
