@@ -15,6 +15,14 @@ const Random = () => {
     }
 
     useEffect(() => {
+        console.log('Random Comp loaded');
+
+        return () => {
+            console.log('Random Comp destroyed');
+        }
+    }, []);
+
+    useEffect(() => {
         document.title = `Random Number: ${randomNumber} | My App`;
         console.log('title set');
     }, [randomNumber]);
