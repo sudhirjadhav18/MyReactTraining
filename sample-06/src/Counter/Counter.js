@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import InteractiveView from "./InteractiveView";
+import InteractiveView from "../InteractiveView/InteractiveView";
 
 const Counter = () => {
     const [counter, setCounter] = useState(0);

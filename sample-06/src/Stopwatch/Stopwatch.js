@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import "./StopWatch.css";
+import "./Stopwatch.css";
 
-const StopWatch = () => {
+const Stopwatch = () => {
     const [time, setTime] = useState(0);
     const [active, setActivate] = useState(true);
 
@@ -39,4 +39,4 @@ const StopWatch = () => {
     );
 }
 
-export default StopWatch;
+export default Stopwatch;
