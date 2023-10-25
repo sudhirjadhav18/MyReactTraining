@@ -1,0 +1,11 @@
+.stop-watch {
+    width: 500px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    text-align: center;
+    padding: 15px;
+}
+
+.stop-watch__heading {
+    margin-top: 0;
+}
