@@ -1,1 +1,6 @@
-@import "style/Common.css";
+@import "style/common.css";
+
+.main-app {
+    margin: auto;
+    width: 900px;
+}
