@@ -30,9 +30,8 @@ const App = () => {
         setComponentList(_list);
     }, []);
 
-    const onNavClickHandler = navId => {
-        console.log(navId);
-        setSelectedNav(navId);
+    const onNavClickHandler = e => {
+        setSelectedNav(e.target.value);
     }
 
     return (

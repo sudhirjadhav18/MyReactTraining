@@ -11,8 +11,9 @@ const Nav = ({ list, className, onNavClick }) => {
                     list.map(item =>
                         <li key={item.id}>
                             <button
+                                value={item.id}
                                 type="button"
-                                onClick={()=>onNavClick(item.id)}>
+                                onClick={onNavClick}>
                                 {item.name}
                             </button>
                         </li>
