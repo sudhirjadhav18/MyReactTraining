@@ -1,6 +1,11 @@
 @import "style/common.css";
 
 .main-app {
+    display: flex;
     margin: auto;
     width: 900px;
+}
+
+.main-app__nav {
+    margin-right: 15px;
 }
