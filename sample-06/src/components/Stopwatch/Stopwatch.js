@@ -27,7 +27,7 @@ const Stopwatch = () => {
         .substr(11, 8);
 
     return (
-        <section className="stop-watch">
+        <section className="stop-watch _center">
             <h1 className="stop-watch__heading">Stopwatch</h1>
             <p>{formattedTime}</p>
             <button
