@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 import Header from "./component/Header";
 import Section from "./component/Section";
@@ -7,27 +8,18 @@ import Form from "./component/Form";
 
 import "./app.scss";
 
-const recordsData = [
-  {
-    album: "Rock",
-    artist: "John Smith",
-    description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
-  },
-  {
-    album: "Lorem Ipsum",
-    artist: "Eminem",
-    description: "It has roots in a piece of classical Latin literature looking at its layout."
-  }
-];
-
 const App = () => {
-  const [records, setRecords] = useState(recordsData);
+  const [records, setRecords] = useState([]);
 
   const onSubmitHandler = (e) => {
-    console.log(e);
-    records.push(e);
-    setRecords([...records]);
+    setRecords([...records, e]);
   }
+
+  useEffect(() => {
+    axios.get('/api/records').then(res => {
+      setRecords(res.data);
+    });
+  }, []);
 
   return (
     <>
