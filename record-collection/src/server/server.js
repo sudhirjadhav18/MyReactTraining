@@ -25,6 +25,16 @@ app.get('/api/records', (req, res) => {
     res.send(recordsData);
 });
 
+app.post('/api/records', (req, res) => {
+    const newRecord = {
+        ...req.body,
+        id: recordsData.reduce((acc, item)=> acc < item.id ? item.id : acc, 0) + 1
+    }
+    recordsData.push(newRecord);
+
+    res.send(newRecord);
+});
+
 app.listen(port, () => {
     console.log(`server listening on port: ${port}`);
 })

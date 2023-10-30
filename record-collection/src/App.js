@@ -12,7 +12,10 @@ const App = () => {
   const [records, setRecords] = useState([]);
 
   const onSubmitHandler = (e) => {
-    setRecords([...records, e]);
+    axios.post('/api/records', e).then(res=>{
+      setRecords([...records, res.data]);
+    });
+    
   }
 
   useEffect(() => {
