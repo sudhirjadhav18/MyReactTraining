@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import './App.css';
 
@@ -7,6 +8,7 @@ import Random from "./components/Random/Random";
 import DayList from "./components/DayList/DayList";
 import Stopwatch from "./components/Stopwatch/Stopwatch";
 import Nav from "./components/Nav/Nav";
+import Footer from "./components/Nav/Footer";
 
 const App = () => {
     const [componentList, setComponentList] = useState([]);
@@ -39,17 +41,28 @@ const App = () => {
             <header className="_font _center">
                 <h1>React Practice Components</h1>
             </header>
-            <main className="_font main-app _card">
+
+            <div className="_font main-app _card">
                 <Nav
                     className="main-app__nav"
                     list={componentList}
                     onNavClick={onNavClickHandler}
                 />
 
-                <section className="_card">
+                {/*  <section className="_card">
                     {componentList[selectedNav] && componentList[selectedNav].component}
-                </section>
-            </main>
+                </section> */}
+                <Router>
+                    <Footer />
+                    <main>
+                        <Routes>
+                            <Route path="/" exact element={<Counter />} />
+                            <Route path="/counter" element={<Random />} />
+                            <Route path="/timer" element={<Stopwatch />} />
+                        </Routes>
+                    </main>
+                </Router>
+            </div>
         </>
     )
 };
